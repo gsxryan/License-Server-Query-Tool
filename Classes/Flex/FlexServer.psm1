@@ -37,11 +37,11 @@ class FlexServer : LicenseServer {
     }
 
     hidden [System.Array]QueryStatusRemoteMgmtTool() {
-        return [System.Array](Invoke-Expression -Command "$($this.QueryUtilityPath) lmstat -c $($this.Port)@$($this.Hostname)")
+        return [System.Array](Invoke-Expression -Command "$($this.QueryUtilityPath) lmstat -a -c $($this.Port)@$($this.Hostname)")
     }
 
     hidden [System.Array]QueryFeaturesRemoteMgmtTool() {
-        return [System.Collections.ArrayList](Invoke-Expression -Command "$($this.QueryUtilityPath) lmstat -c $($this.Port)@$($this.Hostname) -i")
+        return [System.Collections.ArrayList](Invoke-Expression -Command "$($this.QueryUtilityPath) lmstat -a -c $($this.Port)@$($this.Hostname) -i")
     }
 
     hidden [System.Array]QueryFeatureUsageRemoteMgmtTool() {

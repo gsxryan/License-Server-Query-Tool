@@ -1,7 +1,8 @@
 <#
  * @author Stephen Mills
  * @license MIT 
- * @Notes:
+ * @Notes: Modified by Ryan Curtis for ability to run portable and remotely (must be able to reach server on the listening ports)
+ Also, lmutil.exe will need to be on the host machine running the script.  The version should be greater than or equal to all remote licenses.
 
 The following script queries all provided servers and lists their status, total features and expired features.
 
@@ -34,7 +35,7 @@ Port Hostname                            ServerName                      DaemonN
 
 Using module ".\Classes\Flex\FlexServer.psm1"
 
-$LMUtilPath = "/path/to/lmutil.exe"
+$LMUtilPath = "/path/to/lmutil.exe" #BUG: avoid spaces
 $ServiceAddresses = @(
     "27000@flexserver01",
     "27001@flexserver01",
